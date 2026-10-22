@@ -13,3 +13,8 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+
+# Local testing files
+.env.testing
+.phpunit.cache/
+phpunit.xml.bak

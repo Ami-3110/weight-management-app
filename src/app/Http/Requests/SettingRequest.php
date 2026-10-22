@@ -24,7 +24,7 @@ class SettingRequest extends FormRequest
     public function rules()
     {
         return [
-            'target_weight' => ['required', 'numeric'],
+            'target_weight' => ['required', 'numeric', 'between:0,999.9', 'decimal:1'],
         ];
     }
     
@@ -35,17 +35,4 @@ class SettingRequest extends FormRequest
             //'target_weight.numeric' => '数字で入力してください',  不要？
         ];
     }
-    public function withValidator($validator){
-        $value = $this->input('target_weight');
-        if (!is_numeric($value)) return;
-
-        $parts = explode('.', $value);
-        if (strlen($parts[0]) > 4){
-            $validator->errors()->add('weight', '4桁までの数字で入力してください');
-        }
-        if (isset($parts[1]) && strlen($parts[1]) > 1){
-            $validator->errors()->add('weight', '小数点は1桁で入力してください');
-        }
-    }
-
 }

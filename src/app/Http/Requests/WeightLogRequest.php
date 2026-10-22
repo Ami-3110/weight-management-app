@@ -15,7 +15,7 @@ class WeightLogRequest extends FormRequest
     {
         return [
             'date'            => ['required', 'date'],
-            'weight'          => ['required', 'numeric','max_digits:4', 'decimal:1'],
+            'weight'          => ['required', 'numeric','between:0,999.9', 'decimal:1'],
             'calories'        => ['required', 'integer'],
             'exercise_time'   => ['required'],
             'exercise_content'=> ['nullable', 'max:120'],

@@ -17,7 +17,7 @@
     </div>
     <div class="summary__item">
         <span class="summary__label">最新体重</span>
-        <span class="summary__value">{{ $latestLog ->weight }} </span><span class="summary__unit">kg</span>
+        <span class="summary__value">{{ $latestLog?->weight ?? '—' }} </span><span class="summary__unit">kg</span>
     </div>
 </div>
 
